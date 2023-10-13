@@ -1,7 +1,6 @@
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   const isEnabled = message.toggleState;
   if (isEnabled) {
-    // Send a message to the content script of the active tab to apply blur
     chrome.tabs.query({}, function (tabs) {
       if (chrome.runtime.lastError) {
         console.error(chrome.runtime.lastError);
@@ -19,7 +18,6 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
       });
     });
   } else {
-    // Send a message to the content script of the active tab to remove blur
     chrome.tabs.query({ }, function (tabs) {
       if (chrome.runtime.lastError) {
         console.error(chrome.runtime.lastError);
