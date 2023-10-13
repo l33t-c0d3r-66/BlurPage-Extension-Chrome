@@ -9,7 +9,6 @@
     box-sizing: border-box;
     transition: var(--tr);
 }
-
 body {
     padding: 0;
     width: 200px;
@@ -20,7 +19,6 @@ body {
     justify-content: center;
     background: linear-gradient(45deg, #101010, #393939);
 }
-
 .content {
     position: relative;
     width: calc(var(--sz) * 4);
