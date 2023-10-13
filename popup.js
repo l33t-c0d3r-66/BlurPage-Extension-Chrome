@@ -1,4 +1,4 @@
-const toggle = document.getElementById("toggle-switch");
+const toggle = document.getElementById("btn");
 
 // Load the saved state from chrome.storage
 chrome.storage.sync.get({ isEnabled: false }, function (data) {
