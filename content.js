@@ -1,8 +1,6 @@
-
-document.addEventListener("visibilitychange", function() {
-  if (document.hidden){
-      
-  } else {
-      
-  }
-});
+window.onload = function() {
+    chrome.storage.sync.get({ isEnabled: false }, function (data) {
+        let isEnabled = data.isEnabled;
+        chrome.runtime.sendMessage({ toggleState: isEnabled });
+      });
+}

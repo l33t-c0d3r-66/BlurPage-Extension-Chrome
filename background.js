@@ -1,6 +1,6 @@
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-  const isHidden = message.toggleState;
-  if (isHidden) {
+  const isEnabled = message.toggleState;
+  if (isEnabled) {
     // Send a message to the content script of the active tab to apply blur
     chrome.tabs.query({}, function (tabs) {
       if (chrome.runtime.lastError) {
@@ -36,4 +36,9 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
       });
     });
   }
+});
+
+
+chrome.tabs.onCreated.addListener(function (tab) {
+  console.log(tab);
 });
